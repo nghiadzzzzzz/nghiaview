@@ -15,16 +15,16 @@ def main():
      |_   _(_) |_\ \ / (_)_____ __ _____
        | | | | / /\ V /| / -_) V  V (_-<
        |_| |_|_\_\ \_/ |_\___|\_/\_//__/
-       make with ❤️️ by @sandroputraa
+       make with ❤️️ by @Nghĩa dzaiiii
     """
     )
-    print(Fore.LIGHTYELLOW_EX + "Example: https://www.tiktok.com/@awokwokwokwkokwow/video/6940134095989050626")
-    url_video = input("Enter URL Video: ")
+    print(Fore.LIGHTYELLOW_EX + "Example: đéo có demo đâu haha")
+    url_video = input("Ném link video vô đây đi ku: ")
 
     questions = [
         inquirer.List('type',
                       message="What services do you need?",
-                      choices=['Views', 'Shares', 'Favorites'],
+                      choices=['Lượt xem', 'Chia sẻ', 'Yêu thich'],
                       ),
     ]
     answers = inquirer.prompt(questions)
@@ -34,9 +34,9 @@ def main():
 
     if inject.post_solve_captcha(captcha_result=inject.captcha_solver()):
 
-        print("\n[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Success Solve Captcha" + "\n")
+        print("\n[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "vượt captcha thành công" + "\n")
 
-        if answers['type'] == 'Views':
+        if answers['type'] == 'Lượt xem':
 
             while True:
                 inject_views = inject.send_views(
@@ -50,11 +50,11 @@ def main():
                         exit()
 
                     elif inject_views['message'] == 'Another State':
-                        print("[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Current Views: " +
+                        print("[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Tổng số view: " +
                               inject_views['data'], end="\n\n")
 
 
-                    elif inject_views['message'] == "Successfully views sent.":
+                    elif inject_views['message'] == "Gửi view thành công.":
                         print("[ " + str(
                             datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + inject_views[
                                   'message'] + " to " + Fore.LIGHTYELLOW_EX + "" + url_video,
@@ -71,8 +71,8 @@ def main():
                     else:
                         for i in range(int(inject_views['message']), 0, -1):
                             print("[ " + str(
-                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Please wait " + str(
-                                i) + " seconds to send views again.", end="\r")
+                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Mày phải chờ " + str(
+                                i) + " giây để gửi lại lượt xem.", end="\r")
                             time.sleep(1)
 
                     time.sleep(random.randint(1, 5))
@@ -80,7 +80,7 @@ def main():
                 else:
                     pass
 
-        elif answers['type'] == 'Shares':
+        elif answers['type'] == 'Chia sẻ':
 
             while True:
                 inject_shares = inject.send_shares(
@@ -94,11 +94,11 @@ def main():
                         exit()
 
                     elif inject_shares['message'] == 'Another State':
-                        print("[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Current Shares : " +
+                        print("[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Tổng lượt chia sẻ : " +
                               inject_shares['data'], end="\n\n")
 
 
-                    elif inject_shares['message'] == "Shares successfully sent.":
+                    elif inject_shares['message'] == "Gửi thành công lượt chia sẻ.":
                         print("[ " + str(
                             datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + inject_shares[
                                   'message'] + " to " + Fore.LIGHTYELLOW_EX + "" + url_video,
@@ -115,8 +115,8 @@ def main():
                     else:
                         for i in range(int(inject_shares['message']), 0, -1):
                             print("[ " + str(
-                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Please wait " + str(
-                                i) + " seconds to send Shares again.", end="\r")
+                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Mày chờ " + str(
+                                i) + " giây để gửi lại lượt chia sẻ.", end="\r")
                             time.sleep(1)
 
                     time.sleep(random.randint(1, 5))
@@ -124,7 +124,7 @@ def main():
                 else:
                     pass
 
-        elif answers['type'] == 'Favorites':
+        elif answers['type'] == 'Yêu Thích':
 
             while True:
                 inject_favorites = inject.send_favorites(
@@ -140,10 +140,10 @@ def main():
 
                     elif inject_favorites['message'] == 'Another State':
                         print(
-                            "[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Current Favorites : " +
+                            "[ " + str(datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + "Tổng lượt yêu thích : " +
                             inject_favorites['data'], end="\n\n")
 
-                    elif inject_favorites['message'] == "Favorites successfully sent.":
+                    elif inject_favorites['message'] == "Gửi lượt yêu thích thành công.":
                         print("[ " + str(
                             datetime.datetime.now()) + " ] " + Fore.LIGHTGREEN_EX + inject_favorites[
                                   'message'] + " to " + Fore.LIGHTYELLOW_EX + "" + url_video,
@@ -162,8 +162,8 @@ def main():
                     else:
                         for i in range(int(inject_favorites['message']), 0, -1):
                             print("[ " + str(
-                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Please wait " + str(
-                                i) + " seconds to send Favorites again.", end="\r")
+                                datetime.datetime.now()) + " ] " + Fore.LIGHTYELLOW_EX + "Mày chờ " + str(
+                                i) + " giây để gửi lại lượt yêu thích.", end="\r")
                             time.sleep(1)
 
                     time.sleep(random.randint(1, 5))
@@ -172,7 +172,7 @@ def main():
                     pass
 
     else:
-        print(Fore.RED + "Failed to solve captcha.")
+        print(Fore.RED + "Không giải được captcha.")
 
 
 if __name__ == '__main__':
